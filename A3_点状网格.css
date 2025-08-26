@@ -1,0 +1,159 @@
+/* 点状网格样式 */
+/* 适用于 Obsidian 笔记编辑线 - 点状风格，配套复古牛皮纸背景 */
+
+/* 内容容器定位 */
+.cm-contentContainer {
+  position: relative; /* 为伪元素定位做准备 */
+}
+
+/* 使用伪元素添加点状网格 - 借鉴 Rhodia 点状纸设计 */
+.cm-contentContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(139, 69, 19, 0.2) 0.6px,
+      transparent 0.6px
+    );
+  background-size: 24px 24px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  pointer-events: none; /* 不影响鼠标事件 */
+  z-index: 1; /* 在羊皮纸背景之上，但在内容之下 */
+}
+
+/* 编辑内容区域 */
+.cm-content {
+  background: transparent;
+  line-height: 24px;
+  padding: 20px 10px 20px 0; /* 减少左右padding从20px到10px */
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  margin-right: 20px;
+}
+
+/* 移除 .cm-content 的横线背景，因为现在通过伪元素实现 */
+.cm-content {
+  background: transparent;
+}
+
+/* 微调横线位置，确保与文本行完美对齐 */
+.cm-line {
+  background: transparent;
+  padding: 0 2px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 3;
+  line-height: 24px;
+}
+
+/* 光标样式 - 复古风格 */
+.cm-cursor {
+  border-left: 2px solid #8b4513;
+  background: rgba(139, 69, 19, 0.15);
+}
+
+/* 选中文本样式 - 复古风格 */
+.cm-selectionBackground {
+  background: rgba(139, 69, 19, 0.2);
+}
+
+/* 代码块和引用块保持原有背景 */
+.cm-content .cm-block.cm-code,
+.cm-content .cm-block.cm-quote {
+  background: inherit;
+  background-image: none;
+}
+
+/* 表格保持原有背景 */
+.cm-content .cm-table {
+  background: inherit;
+  background-image: none;
+}
+
+/* 行号区域样式 - 复古风格 */
+.cm-gutters {
+  background: rgba(139, 69, 19, 0.03);
+  border-right: none;
+  position: relative;
+}
+
+.cm-gutters::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: calc(100% - 33px);
+  bottom: 0;
+  width: 1px;
+  background: rgba(139, 69, 19, 0.2);
+}
+
+/* 行号文本样式 */
+.cm-gutterElement {
+  padding: 0 8px 0 4px;
+  color: rgba(139, 69, 19, 0.6);
+  font-size: 12px;
+  line-height: 24px;
+  text-align: right;
+  font-weight: 400;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .cm-content {
+    line-height: 20px;
+    padding: 15px 8px 15px 0; /* 移动端也减少左右padding */
+    margin-right: 15px;
+  }
+  
+  .cm-contentContainer::before {
+    background-size: 20px 20px;
+    background-position: 0 0;
+  }
+}
+
+
+
+/* ===== 深色主题适配 ===== */
+/* 深色主题下的点状网格 */
+.theme-dark .cm-contentContainer::before {
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.15) 0.6px,
+      transparent 0.6px
+    );
+}
+
+/* 深色主题下的光标样式 */
+.theme-dark .cm-cursor {
+  border-left: 2px solid #d4af37;
+  background: rgba(212, 175, 55, 0.15);
+}
+
+/* 深色主题下的选中文本样式 */
+.theme-dark .cm-selectionBackground {
+  background: rgba(212, 175, 55, 0.2);
+}
+
+/* 深色主题下的行号区域样式 */
+.theme-dark .cm-gutters {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.theme-dark .cm-gutters::after {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 深色主题下的行号文本样式 */
+.theme-dark .cm-gutterElement {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+ 

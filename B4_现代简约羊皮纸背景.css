@@ -1,0 +1,446 @@
+/* 现代简约羊皮纸背景样式 */
+/* 适用于 Obsidian 笔记背景 - 现代简约风格 */
+
+/* 页面背景 - 现代简约羊皮纸纹理 */
+body {
+  background: 
+    /* 现代简约羊皮纸颜色渐变 - 借鉴 Notion 设计语言 */
+    linear-gradient(135deg, 
+      #faf9f6 0%, 
+      #f7f6f3 15%, 
+      #faf9f6 30%, 
+      #f5f4f1 45%, 
+      #faf9f6 60%, 
+      #f7f6f3 75%, 
+      #faf9f6 90%, 
+      #f5f4f1 100%),
+    /* 现代简约纹理图案 - 借鉴 Material Design */
+    radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.015) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.012) 0%, transparent 50%),
+    /* 现代简约纸张纤维纹理 - 借鉴 Notion 设计 */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(0, 0, 0, 0.006) 1px,
+      rgba(0, 0, 0, 0.006) 2px
+    );
+  background-size: 400% 400%, 400px 400px, 600px 600px, 6px 6px;
+  background-position: 0% 50%, 0 0, 0 0, 0 0;
+  animation: modern-parchment-shift 50s ease-in-out infinite;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* 现代简约羊皮纸纹理动画 */
+@keyframes modern-parchment-shift {
+  0%, 100% { 
+    background-position: 0% 50%, 0 0, 0 0, 0 0; 
+  }
+  50% { 
+    background-position: 100% 50%, 20px 20px, -20px -20px, 2px 2px; 
+  }
+}
+
+/* 主要编辑区域背景 */
+.cm-content {
+  background: transparent;
+  color: #2c2c2c;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.7;
+  padding: 20px 20px 20px 0;
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 编辑器容器样式 - 现代简约纸张质感 */
+.cm-sizer {
+  background: 
+    /* 现代简约纸张质感 - 借鉴 Notion 设计语言 */
+    linear-gradient(135deg, 
+      rgba(250, 249, 246, 0.98) 0%, 
+      rgba(247, 246, 243, 0.99) 50%, 
+      rgba(250, 249, 246, 0.98) 100%),
+    /* 现代简约纸张纹理 - 借鉴 Notion 设计 */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(0, 0, 0, 0.004) 1px,
+      rgba(0, 0, 0, 0.004) 2px
+    );
+  border-radius: 16px;
+  box-shadow: 
+    /* 现代简约阴影效果 - 借鉴 Material Design */
+    0 12px 40px rgba(0, 0, 0, 0.08),
+    0 6px 20px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  position: relative; /* 为伪元素定位做准备 */
+  z-index: 2;
+  padding: 0 20px 0 0;
+}
+
+/* 滚动容器背景 */
+.cm-scroller {
+  background: transparent;
+  border-radius: 12px;
+}
+
+/* 标题样式 - 现代简约风格 */
+.inline-title {
+  background: 
+    linear-gradient(135deg, 
+      rgba(250, 249, 246, 0.99) 0%, 
+      rgba(247, 246, 243, 0.995) 50%, 
+      rgba(250, 249, 246, 0.99) 100%);
+  color: #2c2c2c;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  padding: 24px 20px 18px 20px;
+  border-radius: 16px 16px 0 0;
+  border: none;
+  margin-bottom: 0;
+  margin-right: -20px;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 2;
+}
+
+/* 标题下划线装饰 */
+.inline-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(210, 180, 140, 0.3) 20%, 
+    rgba(210, 180, 140, 0.6) 50%, 
+    rgba(210, 180, 140, 0.3) 80%, 
+    transparent 100%);
+  border-radius: 0.5px;
+}
+
+/* 代码块样式 */
+.cm-content .cm-block.cm-code {
+  background: 
+    linear-gradient(135deg, 
+      rgba(250, 249, 246, 0.95) 0%, 
+      rgba(247, 246, 243, 0.98) 100%);
+  border: 1px solid rgba(210, 180, 140, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  color: #2c2c2c;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* 引用块样式 */
+.cm-content .cm-block.cm-quote {
+  background: 
+    linear-gradient(135deg, 
+      rgba(247, 246, 243, 0.9) 0%, 
+      rgba(250, 249, 246, 0.95) 100%);
+  border-left: 3px solid #d2b48c;
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #4a4a4a;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* 链接样式 */
+.cm-content .cm-link {
+  color: #8b7355;
+  text-decoration: underline;
+  text-decoration-color: #d2b48c;
+  text-decoration-thickness: 1px;
+}
+
+.cm-content .cm-link:hover {
+  color: #6b5b47;
+  text-decoration-color: #8b7355;
+  background: rgba(210, 180, 140, 0.1);
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+/* 强调文本 */
+.cm-content .cm-strong {
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+/* 斜体文本 */
+.cm-content .cm-em {
+  color: #4a4a4a;
+  font-style: italic;
+}
+
+/* 列表样式 */
+.cm-content .cm-list {
+  color: #2c2c2c;
+}
+
+.cm-content .cm-list.cm-list-1 {
+  color: #8b7355;
+}
+
+.cm-content .cm-list.cm-list-2 {
+  color: #a0522d;
+}
+
+/* 表格样式 */
+.cm-content .cm-table {
+  background: 
+    linear-gradient(135deg, 
+      rgba(250, 249, 246, 0.95) 0%, 
+      rgba(247, 246, 243, 0.98) 100%);
+  border: 1px solid rgba(210, 180, 140, 0.3);
+  border-radius: 8px;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.cm-content .cm-table-header {
+  background: 
+    linear-gradient(135deg, 
+      rgba(210, 180, 140, 0.1) 0%, 
+      rgba(210, 180, 140, 0.15) 100%);
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+/* 滚动条样式 */
+.cm-scroller::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cm-scroller::-webkit-scrollbar-track {
+  background: 
+    linear-gradient(135deg, 
+      rgba(247, 246, 243, 0.8) 0%, 
+      rgba(250, 249, 246, 0.9) 100%);
+  border-radius: 4px;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb {
+  background: 
+    linear-gradient(135deg, 
+      rgba(210, 180, 140, 0.4) 0%, 
+      rgba(210, 180, 140, 0.6) 100%);
+  border-radius: 4px;
+  border: 1px solid rgba(210, 180, 140, 0.2);
+}
+
+.cm-scroller::-webkit-scrollbar-thumb:hover {
+  background: 
+    linear-gradient(135deg, 
+      rgba(210, 180, 140, 0.6) 0%, 
+      rgba(210, 180, 140, 0.8) 100%);
+}
+
+/* ===== 深色主题适配 ===== */
+/* 深色主题下的页面背景 */
+.theme-dark body {
+  background: 
+    /* 现代简约深色羊皮纸颜色渐变 - 借鉴 Dark Mode 设计语言 */
+    linear-gradient(135deg, 
+      #1a1a1a 0%, 
+      #1f1f1f 15%, 
+      #1a1a1a 30%, 
+      #151515 45%, 
+      #1a1a1a 60%, 
+      #1f1f1f 75%, 
+      #1a1a1a 90%, 
+      #151515 100%),
+    /* 现代简约深色纹理图案 - 借鉴 Material Design Dark */
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.015) 0%, transparent 50%),
+    /* 现代简约深色纸张纤维纹理 - 借鉴 Notion Dark 设计 */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.008) 1px,
+      rgba(255, 255, 255, 0.008) 2px
+    );
+  animation: modern-dark-parchment-shift 50s ease-in-out infinite;
+}
+
+/* 深色主题下的现代简约羊皮纸纹理动画 */
+@keyframes modern-dark-parchment-shift {
+  0%, 100% { 
+    background-position: 0% 50%, 0 0, 0 0, 0 0; 
+  }
+  50% { 
+    background-position: 100% 50%, 20px 20px, -20px -20px, 2px 2px; 
+  }
+}
+
+/* 深色主题下的主要编辑区域背景 */
+.theme-dark .cm-content {
+  color: #e0e0e0;
+}
+
+/* 深色主题下的编辑器容器样式 */
+.theme-dark .cm-sizer {
+  background: 
+    /* 现代简约深色纸张质感 - 借鉴 Dark Mode 设计语言 */
+    linear-gradient(135deg, 
+      rgba(26, 26, 26, 0.98) 0%, 
+      rgba(31, 31, 31, 0.99) 50%, 
+      rgba(26, 26, 26, 0.98) 100%),
+    /* 现代简约深色纸张纹理 - 借鉴 Notion Dark 设计 */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 255, 255, 0.004) 1px,
+      rgba(255, 255, 255, 0.004) 2px
+    );
+  box-shadow: 
+    /* 现代简约深色阴影效果 - 借鉴 Material Design Dark */
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 6px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* 深色主题下的标题样式 */
+.theme-dark .inline-title {
+  background: 
+    linear-gradient(135deg, 
+      rgba(26, 26, 26, 0.99) 0%, 
+      rgba(31, 31, 31, 0.995) 50%, 
+      rgba(26, 26, 26, 0.99) 100%);
+  color: #f0f0f0;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* 深色主题下的标题下划线装饰 */
+.theme-dark .inline-title::after {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 20%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0.1) 80%, 
+    transparent 100%);
+}
+
+/* 深色主题下的代码块样式 */
+.theme-dark .cm-content .cm-block.cm-code {
+  background: 
+    linear-gradient(135deg, 
+      rgba(26, 26, 26, 0.95) 0%, 
+      rgba(31, 31, 31, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* 深色主题下的引用块样式 */
+.theme-dark .cm-content .cm-block.cm-quote {
+  background: 
+    linear-gradient(135deg, 
+      rgba(31, 31, 31, 0.9) 0%, 
+      rgba(26, 26, 26, 0.95) 100%);
+  border-left: 3px solid #666;
+  color: #ccc;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* 深色主题下的链接样式 */
+.theme-dark .cm-content .cm-link {
+  color: #4a9eff;
+  text-decoration-color: #4a9eff;
+}
+
+.theme-dark .cm-content .cm-link:hover {
+  color: #66b3ff;
+  text-decoration-color: #66b3ff;
+  background: rgba(74, 158, 255, 0.1);
+}
+
+/* 深色主题下的强调文本 */
+.theme-dark .cm-content .cm-strong {
+  color: #f0f0f0;
+}
+
+/* 深色主题下的斜体文本 */
+.theme-dark .cm-content .cm-em {
+  color: #ccc;
+}
+
+/* 深色主题下的列表样式 */
+.theme-dark .cm-content .cm-list {
+  color: #e0e0e0;
+}
+
+.theme-dark .cm-content .cm-list.cm-list-1 {
+  color: #4a9eff;
+}
+
+.theme-dark .cm-content .cm-list.cm-list-2 {
+  color: #66b3ff;
+}
+
+/* 深色主题下的表格样式 */
+.theme-dark .cm-content .cm-table {
+  background: 
+    linear-gradient(135deg, 
+      rgba(26, 26, 26, 0.95) 0%, 
+      rgba(31, 31, 31, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .cm-content .cm-table-header {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.05) 0%, 
+      rgba(255, 255, 255, 0.08) 100%);
+  color: #f0f0f0;
+}
+
+/* 深色主题下的滚动条样式 */
+.theme-dark .cm-scroller::-webkit-scrollbar-track {
+  background: 
+    linear-gradient(135deg, 
+      rgba(31, 31, 31, 0.8) 0%, 
+      rgba(26, 26, 26, 0.9) 100%);
+}
+
+.theme-dark .cm-scroller::-webkit-scrollbar-thumb {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.2) 0%, 
+      rgba(255, 255, 255, 0.3) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .cm-scroller::-webkit-scrollbar-thumb:hover {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.3) 0%, 
+      rgba(255, 255, 255, 0.4) 100%);
+} 

@@ -1,0 +1,470 @@
+/* 深色羊皮纸背景样式 */
+/* 适用于 Obsidian 笔记背景 - 深色复古风格 */
+
+/* 页面背景 - 深色羊皮纸纹理 */
+body {
+  background: 
+    /* 深色羊皮纸颜色渐变 */
+    linear-gradient(135deg, 
+      #2c1810 0%, 
+      #3d2318 15%, 
+      #2c1810 30%, 
+      #1a0f08 45%, 
+      #2c1810 60%, 
+      #3d2318 75%, 
+      #2c1810 90%, 
+      #1a0f08 100%),
+    /* 深色羊皮纸纹理图案 */
+    radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(139, 69, 19, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 70%, rgba(139, 69, 19, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.10) 0%, transparent 50%),
+    /* 深色纸张纤维纹理 */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(139, 69, 19, 0.05) 2px,
+      rgba(139, 69, 19, 0.05) 4px
+    ),
+    /* 深色边缘阴影效果 */
+    radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  background-size: 400% 400%, 200px 200px, 300px 300px, 250px 250px, 400px 400px, 8px 8px, 100% 100%;
+  background-position: 0% 50%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  animation: dark-parchment-shift 30s ease-in-out infinite;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* 深色羊皮纸纹理动画 */
+@keyframes dark-parchment-shift {
+  0%, 100% { 
+    background-position: 0% 50%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; 
+  }
+  25% { 
+    background-position: 25% 75%, 10px 5px, -5px 10px, 15px -5px, -10px 15px, 2px 2px, 0 0; 
+  }
+  50% { 
+    background-position: 50% 50%, -5px -10px, 15px 5px, -10px 15px, 5px -15px, -2px -2px, 0 0; 
+  }
+  75% { 
+    background-position: 75% 25%, 10px -5px, -15px -10px, 5px 20px, -15px 5px, 1px -1px, 0 0; 
+  }
+}
+
+/* 主要编辑区域背景 */
+.cm-content {
+  background: transparent;
+  color: #e6d7c3;
+  font-family: 'Times New Roman', serif;
+  line-height: 1.6;
+  padding: 20px 20px 20px 0;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 编辑器容器样式 - 深色纸张质感 */
+.cm-sizer {
+  background: 
+    /* 深色纸张质感 */
+    linear-gradient(135deg, 
+      rgba(44, 24, 16, 0.9) 0%, 
+      rgba(61, 35, 24, 0.95) 50%, 
+      rgba(44, 24, 16, 0.9) 100%),
+    /* 深色纸张纹理 */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(139, 69, 19, 0.08) 1px,
+      rgba(139, 69, 19, 0.08) 2px
+    );
+  border-radius: 8px;
+  box-shadow: 
+    /* 内阴影 - 深色纸张凹陷效果 */
+    inset 0 0 30px rgba(0, 0, 0, 0.3),
+    /* 外阴影 - 深色纸张浮起效果 */
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(139, 69, 19, 0.2);
+  position: relative; /* 为伪元素定位做准备 */
+  z-index: 2;
+  padding: 0 20px 0 0;
+}
+
+/* 滚动容器背景 */
+.cm-scroller {
+  background: transparent;
+  border-radius: 8px;
+}
+
+/* 标题样式 - 深色羊皮纸风格 */
+.inline-title {
+  background: 
+    linear-gradient(135deg, 
+      rgba(44, 24, 16, 0.95) 0%, 
+      rgba(61, 35, 24, 0.98) 50%, 
+      rgba(44, 24, 16, 0.95) 100%);
+  color: #d4af37;
+  font-weight: bold;
+  font-family: 'Times New Roman', serif;
+  padding: 15px 20px 10px 20px;
+  border-radius: 8px 8px 0 0;
+  border: none;
+  margin-bottom: 0;
+  margin-right: -20px;
+  box-shadow: 
+    inset 0 0 20px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* 标题下划线装饰 */
+.inline-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(212, 175, 55, 0.3) 20%, 
+    rgba(212, 175, 55, 0.6) 50%, 
+    rgba(212, 175, 55, 0.3) 80%, 
+    transparent 100%);
+  border-radius: 1px;
+}
+
+/* 代码块样式 */
+.cm-content .cm-block.cm-code {
+  background: 
+    linear-gradient(135deg, 
+      rgba(44, 24, 16, 0.9) 0%, 
+      rgba(61, 35, 24, 0.95) 100%);
+  border: 1px solid rgba(139, 69, 19, 0.6);
+  border-radius: 6px;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  color: #e6d7c3;
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.2),
+    0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 引用块样式 */
+.cm-content .cm-block.cm-quote {
+  background: 
+    linear-gradient(135deg, 
+      rgba(61, 35, 24, 0.8) 0%, 
+      rgba(44, 24, 16, 0.9) 100%);
+  border-left: 4px solid #d4af37;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #c4b5a3;
+  box-shadow: 
+    inset 0 0 15px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 链接样式 */
+.cm-content .cm-link {
+  color: #d4af37;
+  text-decoration: underline;
+  text-decoration-color: #b8860b;
+  text-decoration-thickness: 1px;
+}
+
+.cm-content .cm-link:hover {
+  color: #b8860b;
+  text-decoration-color: #d4af37;
+  background: rgba(139, 69, 19, 0.2);
+  border-radius: 2px;
+  padding: 1px 2px;
+}
+
+/* 强调文本 */
+.cm-content .cm-strong {
+  color: #d4af37;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* 斜体文本 */
+.cm-content .cm-em {
+  color: #c4b5a3;
+  font-style: italic;
+}
+
+/* 列表样式 */
+.cm-content .cm-list {
+  color: #e6d7c3;
+}
+
+.cm-content .cm-list.cm-list-1 {
+  color: #d4af37;
+}
+
+.cm-content .cm-list.cm-list-2 {
+  color: #b8860b;
+}
+
+/* 表格样式 */
+.cm-content .cm-table {
+  background: 
+    linear-gradient(135deg, 
+      rgba(44, 24, 16, 0.8) 0%, 
+      rgba(61, 35, 24, 0.9) 100%);
+  border: 1px solid rgba(139, 69, 19, 0.6);
+  border-radius: 6px;
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.2),
+    0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.cm-content .cm-table-header {
+  background: 
+    linear-gradient(135deg, 
+      rgba(139, 69, 19, 0.2) 0%, 
+      rgba(184, 134, 11, 0.3) 100%);
+  color: #d4af37;
+  font-weight: bold;
+}
+
+/* 滚动条样式 */
+.cm-scroller::-webkit-scrollbar {
+  width: 10px;
+}
+
+.cm-scroller::-webkit-scrollbar-track {
+  background: 
+    linear-gradient(135deg, 
+      rgba(44, 24, 16, 0.6) 0%, 
+      rgba(61, 35, 24, 0.8) 100%);
+  border-radius: 5px;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb {
+  background: 
+    linear-gradient(135deg, 
+      rgba(139, 69, 19, 0.6) 0%, 
+      rgba(184, 134, 11, 0.8) 100%);
+  border-radius: 5px;
+  border: 1px solid rgba(139, 69, 19, 0.3);
+}
+
+.cm-scroller::-webkit-scrollbar-thumb:hover {
+  background: 
+    linear-gradient(135deg, 
+      rgba(139, 69, 19, 0.8) 0%, 
+      rgba(184, 134, 11, 1.0) 100%);
+}
+
+/* ===== 浅色主题适配 ===== */
+/* 浅色主题下的页面背景 - 借鉴浅色羊皮纸设计 */
+.theme-light body {
+  background: 
+    /* 浅色羊皮纸颜色渐变 */
+    linear-gradient(135deg, 
+      #f4e4bc 0%, 
+      #f7e8c3 15%, 
+      #f4e4bc 30%, 
+      #f0dbb0 45%, 
+      #f4e4bc 60%, 
+      #f7e8c3 75%, 
+      #f4e4bc 90%, 
+      #f0dbb0 100%),
+    /* 浅色羊皮纸纹理图案 */
+    radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(139, 69, 19, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 70%, rgba(139, 69, 19, 0.10) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+    /* 浅色纸张纤维纹理 */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(139, 69, 19, 0.02) 2px,
+      rgba(139, 69, 19, 0.02) 4px
+    ),
+    /* 浅色边缘阴影效果 */
+    radial-gradient(ellipse at center, transparent 0%, rgba(139, 69, 19, 0.06) 100%);
+  animation: light-parchment-shift 30s ease-in-out infinite;
+}
+
+/* 浅色主题下的羊皮纸纹理动画 */
+@keyframes light-parchment-shift {
+  0%, 100% { 
+    background-position: 0% 50%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; 
+  }
+  25% { 
+    background-position: 25% 75%, 10px 5px, -5px 10px, 15px -5px, -10px 15px, 2px 2px, 0 0; 
+  }
+  50% { 
+    background-position: 50% 50%, -5px -10px, 15px 5px, -10px 15px, 5px -15px, -2px -2px, 0 0; 
+  }
+  75% { 
+    background-position: 75% 25%, 10px -5px, -15px -10px, 5px 20px, -15px 5px, 1px -1px, 0 0; 
+  }
+}
+
+/* 浅色主题下的主要编辑区域背景 */
+.theme-light .cm-content {
+  color: #2c1810;
+}
+
+/* 浅色主题下的编辑器容器样式 */
+.theme-light .cm-sizer {
+  background: 
+    /* 浅色纸张质感 */
+    linear-gradient(135deg, 
+      rgba(244, 228, 188, 0.9) 0%, 
+      rgba(247, 232, 195, 0.95) 50%, 
+      rgba(244, 228, 188, 0.9) 100%),
+    /* 浅色纸张纹理 */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(139, 69, 19, 0.03) 1px,
+      rgba(139, 69, 19, 0.03) 2px
+    );
+  box-shadow: 
+    /* 内阴影 - 浅色纸张凹陷效果 */
+    inset 0 0 30px rgba(139, 69, 19, 0.08),
+    /* 外阴影 - 浅色纸张浮起效果 */
+    0 4px 20px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(139, 69, 19, 0.15);
+}
+
+/* 浅色主题下的标题样式 */
+.theme-light .inline-title {
+  background: 
+    linear-gradient(135deg, 
+      rgba(244, 228, 188, 0.95) 0%, 
+      rgba(247, 232, 195, 0.98) 50%, 
+      rgba(244, 228, 188, 0.95) 100%);
+  color: #5d4037;
+  box-shadow: 
+    inset 0 0 20px rgba(139, 69, 19, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* 浅色主题下的标题下划线装饰 */
+.theme-light .inline-title::after {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(139, 69, 19, 0.3) 20%, 
+    rgba(139, 69, 19, 0.6) 50%, 
+    rgba(139, 69, 19, 0.3) 80%, 
+    transparent 100%);
+}
+
+/* 浅色主题下的代码块样式 */
+.theme-light .cm-content .cm-block.cm-code {
+  background: 
+    linear-gradient(135deg, 
+      rgba(244, 228, 188, 0.9) 0%, 
+      rgba(247, 232, 195, 0.95) 100%);
+  border: 1px solid rgba(139, 69, 19, 0.6);
+  color: #2c1810;
+  box-shadow: 
+    inset 0 0 10px rgba(139, 69, 19, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* 浅色主题下的引用块样式 */
+.theme-light .cm-content .cm-block.cm-quote {
+  background: 
+    linear-gradient(135deg, 
+      rgba(205, 133, 63, 0.8) 0%, 
+      rgba(244, 228, 188, 0.9) 100%);
+  border-left: 4px solid #8b4513;
+  color: #4e342e;
+  box-shadow: 
+    inset 0 0 15px rgba(139, 69, 19, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 浅色主题下的链接样式 */
+.theme-light .cm-content .cm-link {
+  color: #8b4513;
+  text-decoration-color: #a0522d;
+}
+
+.theme-light .cm-content .cm-link:hover {
+  color: #a0522d;
+  text-decoration-color: #8b4513;
+  background: rgba(139, 69, 19, 0.15);
+}
+
+/* 浅色主题下的强调文本 */
+.theme-light .cm-content .cm-strong {
+  color: #5d4037;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* 浅色主题下的斜体文本 */
+.theme-light .cm-content .cm-em {
+  color: #4e342e;
+}
+
+/* 浅色主题下的列表样式 */
+.theme-light .cm-content .cm-list {
+  color: #2c1810;
+}
+
+.theme-light .cm-content .cm-list.cm-list-1 {
+  color: #8b4513;
+}
+
+.theme-light .cm-content .cm-list.cm-list-2 {
+  color: #a0522d;
+}
+
+/* 浅色主题下的表格样式 */
+.theme-light .cm-content .cm-table {
+  background: 
+    linear-gradient(135deg, 
+      rgba(244, 228, 188, 0.8) 0%, 
+      rgba(247, 232, 195, 0.9) 100%);
+  border: 1px solid rgba(139, 69, 19, 0.6);
+  box-shadow: 
+    inset 0 0 10px rgba(139, 69, 19, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.theme-light .cm-content .cm-table-header {
+  background: 
+    linear-gradient(135deg, 
+      rgba(139, 69, 19, 0.15) 0%, 
+      rgba(160, 82, 45, 0.25) 100%);
+  color: #5d4037;
+}
+
+/* 浅色主题下的滚动条样式 */
+.theme-light .cm-scroller::-webkit-scrollbar-track {
+  background: 
+    linear-gradient(135deg, 
+      rgba(244, 228, 188, 0.6) 0%, 
+      rgba(247, 232, 195, 0.8) 100%);
+}
+
+.theme-light .cm-scroller::-webkit-scrollbar-thumb {
+  background: 
+    linear-gradient(135deg, 
+      rgba(139, 69, 19, 0.6) 0%, 
+      rgba(160, 82, 45, 0.8) 100%);
+  border: 1px solid rgba(139, 69, 19, 0.3);
+}
+
+.theme-light .cm-scroller::-webkit-scrollbar-thumb:hover {
+  background: 
+    linear-gradient(135deg, 
+      rgba(139, 69, 19, 0.8) 0%, 
+      rgba(160, 82, 45, 1.0) 100%);
+} 

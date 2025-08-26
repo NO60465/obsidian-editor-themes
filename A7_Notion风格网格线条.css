@@ -1,0 +1,469 @@
+/* Notion 风格网格线条样式 */
+/* 适用于 Obsidian 笔记编辑线 - Notion 简约现代风格 */
+/* 修复：限制网格线条只在编辑器内容区域显示，避免在编辑器外出现多余横线 */
+
+/* 内容容器定位 */
+.cm-contentContainer {
+  position: relative; /* 为伪元素定位做准备 */
+}
+
+/* 确保只在编辑器内容区域显示网格 */
+.cm-editor .cm-contentContainer {
+  position: relative; /* 为伪元素定位做准备 */
+}
+
+/* ===== 横线网格 - Notion 简约风格 ===== */
+/* 使用伪元素添加横线，与 Notion 简约主题兼容 */
+/* 限制只在编辑器内容区域显示横线 */
+.cm-contentContainer:has(.cm-content)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(0deg, transparent 0%, transparent calc(24px - 1px), rgba(55, 53, 47, 0.08) calc(24px - 1px), rgba(55, 53, 47, 0.08) 24px);
+  background-size: 100% 24px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  pointer-events: none; /* 不影响鼠标事件 */
+  z-index: 1; /* 在背景之上，但在内容之下 */
+}
+
+/* 备用方案：如果 :has() 不支持，使用更具体的选择器 */
+.cm-editor .cm-contentContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(0deg, transparent 0%, transparent calc(24px - 1px), rgba(55, 53, 47, 0.08) calc(24px - 1px), rgba(55, 53, 47, 0.08) 24px);
+  background-size: 100% 24px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  pointer-events: none; /* 不影响鼠标事件 */
+  z-index: 1; /* 在背景之上，但在内容之下 */
+}
+
+/* 编辑内容区域 */
+.cm-content {
+  background: transparent;
+  line-height: 24px;
+  padding: 20px 10px 20px 0;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  margin-right: 20px;
+}
+
+/* 移除 .cm-content 的横线背景，因为现在通过伪元素实现 */
+.cm-content {
+  background: transparent;
+}
+
+/* 微调横线位置，确保与文本行完美对齐 */
+.cm-line {
+  background: transparent;
+  padding: 0 2px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 3;
+  line-height: 24px;
+}
+
+/* 光标样式 - Notion 风格 */
+.cm-cursor {
+  border-left: 2px solid #37352f;
+  background: rgba(55, 53, 47, 0.1);
+}
+
+/* 选中文本样式 - Notion 风格 */
+.cm-selectionBackground {
+  background: rgba(55, 53, 47, 0.15);
+}
+
+/* 代码块和引用块保持原有背景 */
+.cm-content .cm-block.cm-code,
+.cm-content .cm-block.cm-quote {
+  background: inherit;
+  background-image: none;
+}
+
+/* 表格保持原有背景 */
+.cm-content .cm-table {
+  background: inherit;
+  background-image: none;
+}
+
+/* 行号区域样式 - Notion 风格 */
+.cm-gutters {
+  background: rgba(55, 53, 47, 0.02);
+  border-right: none;
+  position: relative;
+}
+
+.cm-gutters::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: calc(100% - 33px);
+  bottom: 0;
+  width: 1px;
+  background: rgba(55, 53, 47, 0.1);
+}
+
+/* 行号文本样式 */
+.cm-gutterElement {
+  padding: 0 8px 0 4px;
+  color: rgba(55, 53, 47, 0.4);
+  font-size: 12px;
+  line-height: 24px;
+  text-align: right;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .cm-content {
+    line-height: 20px;
+    padding: 15px 8px 15px 0;
+    margin-right: 15px;
+  }
+  
+  .cm-contentContainer::before {
+    background-size: 100% 20px;
+    background-position: 0 0;
+  }
+}
+
+
+
+/* ===== 点状网格 - Notion 简约风格 ===== */
+/* 点状网格变体 - 参考 Notion 简约风格 */
+.cm-contentContainer:has(.cm-content).notion-dots::before {
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(55, 53, 47, 0.1) 0.6px,
+      transparent 0.6px
+    );
+  background-size: 24px 24px;
+  background-position: 0 0;
+}
+
+/* 备用方案 */
+.cm-editor .cm-contentContainer.notion-dots::before {
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(55, 53, 47, 0.1) 0.6px,
+      transparent 0.6px
+    );
+  background-size: 24px 24px;
+  background-position: 0 0;
+}
+
+
+
+/* ===== 虚线网格 - Notion 简约风格 ===== */
+/* 虚线网格变体 - 参考 Notion 简约风格 */
+.cm-contentContainer:has(.cm-content).notion-dashed::before {
+  background-image: 
+    linear-gradient(0deg, 
+      transparent 0%, 
+      transparent calc(24px - 1px), 
+      rgba(55, 53, 47, 0.08) calc(24px - 1px), 
+      rgba(55, 53, 47, 0.08) calc(24px - 0.5px),
+      transparent calc(24px - 0.5px),
+      transparent 24px);
+  background-size: 100% 24px;
+  background-position: 0 0;
+}
+
+/* 备用方案 */
+.cm-editor .cm-contentContainer.notion-dashed::before {
+  background-image: 
+    linear-gradient(0deg, 
+      transparent 0%, 
+      transparent calc(24px - 1px), 
+      rgba(55, 53, 47, 0.08) calc(24px - 1px), 
+      rgba(55, 53, 47, 0.08) calc(24px - 0.5px),
+      transparent calc(24px - 0.5px),
+      transparent 24px);
+  background-size: 100% 24px;
+  background-position: 0 0;
+}
+
+
+
+/* ===== 浅色主题适配 ===== */
+/* 浅色主题下的横线网格 */
+.theme-light .cm-contentContainer:has(.cm-content)::before {
+  background-image: 
+    linear-gradient(0deg, transparent 0%, transparent calc(24px - 1px), rgba(55, 53, 47, 0.08) calc(24px - 1px), rgba(55, 53, 47, 0.08) 24px);
+}
+
+/* 备用方案 */
+.theme-light .cm-editor .cm-contentContainer::before {
+  background-image: 
+    linear-gradient(0deg, transparent 0%, transparent calc(24px - 1px), rgba(55, 53, 47, 0.08) calc(24px - 1px), rgba(55, 53, 47, 0.08) 24px);
+}
+
+/* 浅色主题下的光标样式 */
+.theme-light .cm-cursor {
+  border-left: 2px solid #37352f;
+  background: rgba(55, 53, 47, 0.1);
+}
+
+/* 浅色主题下的选中文本样式 */
+.theme-light .cm-selectionBackground {
+  background: rgba(55, 53, 47, 0.15);
+}
+
+/* 浅色主题下的行号区域样式 */
+.theme-light .cm-gutters {
+  background: rgba(55, 53, 47, 0.02);
+}
+
+.theme-light .cm-gutters::after {
+  background: rgba(55, 53, 47, 0.1);
+}
+
+/* 浅色主题下的行号文本样式 */
+.theme-light .cm-gutterElement {
+  color: rgba(55, 53, 47, 0.4);
+}
+
+/* 浅色主题下的点状网格 */
+.theme-light .cm-contentContainer:has(.cm-content).notion-dots::before {
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(55, 53, 47, 0.1) 0.6px,
+      transparent 0.6px
+    );
+}
+
+/* 备用方案 */
+.theme-light .cm-editor .cm-contentContainer.notion-dots::before {
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(55, 53, 47, 0.1) 0.6px,
+      transparent 0.6px
+    );
+}
+
+/* 浅色主题下的虚线网格 */
+.theme-light .cm-contentContainer:has(.cm-content).notion-dashed::before {
+  background-image: 
+    linear-gradient(0deg, 
+      transparent 0%, 
+      transparent calc(24px - 1px), 
+      rgba(55, 53, 47, 0.08) calc(24px - 1px), 
+      rgba(55, 53, 47, 0.08) calc(24px - 0.5px),
+      transparent calc(24px - 0.5px),
+      transparent 24px);
+}
+
+/* 备用方案 */
+.theme-light .cm-editor .cm-contentContainer.notion-dashed::before {
+  background-image: 
+    linear-gradient(0deg, 
+      transparent 0%, 
+      transparent calc(24px - 1px), 
+      rgba(55, 53, 47, 0.08) calc(24px - 1px), 
+      rgba(55, 53, 47, 0.08) calc(24px - 0.5px),
+      transparent calc(24px - 0.5px),
+      transparent 24px);
+}
+
+
+
+/* ===== 深色主题适配 ===== */
+/* 深色主题下的横线网格 */
+.theme-dark .cm-contentContainer:has(.cm-content)::before {
+  background-image: 
+    linear-gradient(0deg, transparent 0%, transparent calc(24px - 1px), rgba(232, 232, 232, 0.08) calc(24px - 1px), rgba(232, 232, 232, 0.08) 24px);
+}
+
+/* 备用方案 */
+.theme-dark .cm-editor .cm-contentContainer::before {
+  background-image: 
+    linear-gradient(0deg, transparent 0%, transparent calc(24px - 1px), rgba(232, 232, 232, 0.08) calc(24px - 1px), rgba(232, 232, 232, 0.08) 24px);
+}
+
+/* 深色主题下的光标样式 */
+.theme-dark .cm-cursor {
+  border-left: 2px solid #e8e8e8;
+  background: rgba(232, 232, 232, 0.1);
+}
+
+/* 深色主题下的选中文本样式 */
+.theme-dark .cm-selectionBackground {
+  background: rgba(232, 232, 232, 0.15);
+}
+
+/* 深色主题下的行号区域样式 */
+.theme-dark .cm-gutters {
+  background: rgba(232, 232, 232, 0.02);
+}
+
+.theme-dark .cm-gutters::after {
+  background: rgba(232, 232, 232, 0.1);
+}
+
+/* 深色主题下的行号文本样式 */
+.theme-dark .cm-gutterElement {
+  color: rgba(232, 232, 232, 0.4);
+}
+
+/* 深色主题下的点状网格 */
+.theme-dark .cm-contentContainer:has(.cm-content).notion-dots::before {
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(232, 232, 232, 0.1) 0.6px,
+      transparent 0.6px
+    );
+}
+
+/* 备用方案 */
+.theme-dark .cm-editor .cm-contentContainer.notion-dots::before {
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(232, 232, 232, 0.1) 0.6px,
+      transparent 0.6px
+    );
+}
+
+/* 深色主题下的虚线网格 */
+.theme-dark .cm-contentContainer:has(.cm-content).notion-dashed::before {
+  background-image: 
+    linear-gradient(0deg, 
+      transparent 0%, 
+      transparent calc(24px - 1px), 
+      rgba(232, 232, 232, 0.08) calc(24px - 1px), 
+      rgba(232, 232, 232, 0.08) calc(24px - 0.5px),
+      transparent calc(24px - 0.5px),
+      transparent 24px);
+}
+
+/* 备用方案 */
+.theme-dark .cm-editor .cm-contentContainer.notion-dashed::before {
+  background-image: 
+    linear-gradient(0deg, 
+      transparent 0%, 
+      transparent calc(24px - 1px), 
+      rgba(232, 232, 232, 0.08) calc(24px - 1px), 
+      rgba(232, 232, 232, 0.08) calc(24px - 0.5px),
+      transparent calc(24px - 0.5px),
+      transparent 24px);
+}
+
+
+
+/* ===== Notion 风格增强 ===== */
+/* 语法高亮增强 - 参考 Notion 语法高亮 */
+.cm-content .cm-header {
+  color: #37352f;
+  font-weight: 600;
+}
+
+.cm-content .cm-header-1 {
+  color: #37352f;
+  font-size: 1.5em;
+}
+
+.cm-content .cm-header-2 {
+  color: #37352f;
+  font-size: 1.3em;
+}
+
+.cm-content .cm-header-3 {
+  color: #37352f;
+  font-size: 1.1em;
+}
+
+/* 代码语法高亮 */
+.cm-content .cm-keyword {
+  color: #37352f;
+  font-weight: 600;
+}
+
+.cm-content .cm-string {
+  color: #787774;
+}
+
+.cm-content .cm-number {
+  color: #787774;
+}
+
+.cm-content .cm-comment {
+  color: #787774;
+  font-style: italic;
+}
+
+.cm-content .cm-variable {
+  color: #37352f;
+}
+
+.cm-content .cm-property {
+  color: #37352f;
+}
+
+.cm-content .cm-operator {
+  color: #37352f;
+}
+
+/* 深色主题下的语法高亮 */
+.theme-dark .cm-content .cm-header {
+  color: #e8e8e8;
+}
+
+.theme-dark .cm-content .cm-header-1 {
+  color: #e8e8e8;
+}
+
+.theme-dark .cm-content .cm-header-2 {
+  color: #e8e8e8;
+}
+
+.theme-dark .cm-content .cm-header-3 {
+  color: #e8e8e8;
+}
+
+.theme-dark .cm-content .cm-keyword {
+  color: #e8e8e8;
+}
+
+.theme-dark .cm-content .cm-string {
+  color: #a8a8a8;
+}
+
+.theme-dark .cm-content .cm-number {
+  color: #a8a8a8;
+}
+
+.theme-dark .cm-content .cm-comment {
+  color: #a8a8a8;
+}
+
+.theme-dark .cm-content .cm-variable {
+  color: #e8e8e8;
+}
+
+.theme-dark .cm-content .cm-property {
+  color: #e8e8e8;
+}
+
+.theme-dark .cm-content .cm-operator {
+  color: #e8e8e8;
+}
+
+ 

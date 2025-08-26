@@ -1,0 +1,425 @@
+/* 晨光森林背景样式 */
+/* 适用于 Obsidian 笔记背景 - 专为写作放松设计 */
+
+/* 页面背景 - 简洁森林主题 */
+body {
+  background: 
+    /* 简洁森林渐变 - 参考 Microsoft Edge 森林主题 */
+    linear-gradient(135deg, 
+      #f8faf5 0%, 
+      #f5f8f0 25%, 
+      #f8faf5 50%, 
+      #f2f6ea 75%, 
+      #f8faf5 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* 删除动画效果 */
+
+/* 主要编辑区域背景 */
+.cm-content {
+  background: transparent;
+  color: #3a4d1a;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.8;
+  padding: 20px 20px 20px 0;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 编辑器容器样式 - 简洁森林质感 */
+.cm-sizer {
+  background: 
+    /* 简洁森林纸张质感 */
+    linear-gradient(135deg, 
+      rgba(248, 250, 245, 0.95) 0%, 
+      rgba(245, 248, 240, 0.98) 50%, 
+      rgba(248, 250, 245, 0.95) 100%);
+  border-radius: 8px;
+  box-shadow: 
+    /* 简洁阴影效果 */
+    0 4px 16px rgba(120, 150, 80, 0.08),
+    0 2px 8px rgba(120, 150, 80, 0.04);
+  position: relative; /* 为伪元素定位做准备 */
+  z-index: 2;
+  padding: 0 20px 0 0;
+}
+
+/* 滚动容器背景 */
+.cm-scroller {
+  background: transparent;
+  border-radius: 12px;
+}
+
+/* 标题样式 - 简洁森林风格 */
+.inline-title {
+  background: 
+    linear-gradient(135deg, 
+      rgba(248, 250, 245, 0.98) 0%, 
+      rgba(245, 248, 240, 0.99) 50%, 
+      rgba(248, 250, 245, 0.98) 100%);
+  color: #3a4d1a;
+  font-weight: 600;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  padding: 20px 20px 15px 20px;
+  border-radius: 8px 8px 0 0;
+  border: none;
+  margin-bottom: 0;
+  margin-right: -20px;
+  box-shadow: 
+    0 2px 8px rgba(120, 150, 80, 0.06);
+  position: relative;
+  z-index: 2;
+}
+
+/* 标题下划线装饰 - 简洁森林效果 */
+.inline-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(120, 150, 80, 0.3) 20%, 
+    rgba(120, 150, 80, 0.5) 50%, 
+    rgba(120, 150, 80, 0.3) 80%, 
+    transparent 100%);
+  border-radius: 0.5px;
+}
+
+/* 代码块样式 */
+.cm-content .cm-block.cm-code {
+  background: 
+    linear-gradient(135deg, 
+      rgba(248, 246, 240, 0.9) 0%, 
+      rgba(245, 241, 232, 0.95) 100%);
+  border: 1px solid rgba(139, 175, 75, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  color: #4a5d23;
+  box-shadow: 
+    0 2px 8px rgba(139, 175, 75, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* 引用块样式 */
+.cm-content .cm-block.cm-quote {
+  background: 
+    linear-gradient(135deg, 
+      rgba(245, 241, 232, 0.9) 0%, 
+      rgba(248, 246, 240, 0.95) 100%);
+  border-left: 3px solid #8baa4a;
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #5a6b2a;
+  box-shadow: 
+    0 2px 8px rgba(139, 175, 75, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* 链接样式 */
+.cm-content .cm-link {
+  color: #6b8e23;
+  text-decoration: underline;
+  text-decoration-color: #8baa4a;
+  text-decoration-thickness: 1px;
+}
+
+.cm-content .cm-link:hover {
+  color: #556b2f;
+  text-decoration-color: #6b8e23;
+  background: rgba(139, 175, 75, 0.1);
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+/* 强调文本 */
+.cm-content .cm-strong {
+  color: #4a5d23;
+  font-weight: 600;
+}
+
+/* 斜体文本 */
+.cm-content .cm-em {
+  color: #5a6b2a;
+  font-style: italic;
+}
+
+/* 列表样式 */
+.cm-content .cm-list {
+  color: #4a5d23;
+}
+
+.cm-content .cm-list.cm-list-1 {
+  color: #6b8e23;
+}
+
+.cm-content .cm-list.cm-list-2 {
+  color: #8baa4a;
+}
+
+/* 表格样式 */
+.cm-content .cm-table {
+  background: 
+    linear-gradient(135deg, 
+      rgba(248, 246, 240, 0.9) 0%, 
+      rgba(245, 241, 232, 0.95) 100%);
+  border: 1px solid rgba(139, 175, 75, 0.3);
+  border-radius: 8px;
+  box-shadow: 
+    0 2px 8px rgba(139, 175, 75, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.cm-content .cm-table-header {
+  background: 
+    linear-gradient(135deg, 
+      rgba(139, 175, 75, 0.08) 0%, 
+      rgba(139, 175, 75, 0.12) 100%);
+  color: #4a5d23;
+  font-weight: 600;
+}
+
+/* 滚动条样式 */
+.cm-scroller::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cm-scroller::-webkit-scrollbar-track {
+  background: 
+    linear-gradient(135deg, 
+      rgba(245, 241, 232, 0.8) 0%, 
+      rgba(248, 246, 240, 0.9) 100%);
+  border-radius: 4px;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb {
+  background: 
+    linear-gradient(135deg, 
+      rgba(139, 175, 75, 0.3) 0%, 
+      rgba(139, 175, 75, 0.5) 100%);
+  border-radius: 4px;
+  border: 1px solid rgba(139, 175, 75, 0.2);
+}
+
+.cm-scroller::-webkit-scrollbar-thumb:hover {
+  background: 
+    linear-gradient(135deg, 
+      rgba(139, 175, 75, 0.4) 0%, 
+      rgba(139, 175, 75, 0.6) 100%);
+}
+
+/* ===== 深色主题适配 ===== */
+/* 深色主题下的晨光森林 - 夜晚森林 */
+.theme-dark body {
+  background: 
+    /* 夜晚森林颜色渐变 */
+    linear-gradient(135deg, 
+      #1a2f0a 0%, 
+      #2a3f1a 15%, 
+      #1a2f0a 30%, 
+      #152a08 45%, 
+      #1a2f0a 60%, 
+      #2a3f1a 75%, 
+      #1a2f0a 90%, 
+      #152a08 100%),
+    /* 月光透过树叶的光斑效果 */
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+    /* 夜晚树叶纹理 */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(255, 255, 255, 0.02) 3px,
+      rgba(255, 255, 255, 0.02) 6px
+    ),
+    /* 夜晚雾气效果 */
+    radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  animation: night-forest-breath 60s ease-in-out infinite;
+}
+
+/* 夜晚森林呼吸动画 */
+@keyframes night-forest-breath {
+  0%, 100% { 
+    background-position: 0% 50%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; 
+    opacity: 1;
+  }
+  25% { 
+    background-position: 25% 75%, 10px 5px, -5px 10px, 15px -5px, -10px 15px, 2px 2px, 0 0; 
+    opacity: 0.98;
+  }
+  50% { 
+    background-position: 50% 50%, -5px -10px, 15px 5px, -10px 15px, 5px -15px, -2px -2px, 0 0; 
+    opacity: 1;
+  }
+  75% { 
+    background-position: 75% 25%, 10px -5px, -15px -10px, 5px 20px, -15px 5px, 1px -1px, 0 0; 
+    opacity: 0.98;
+  }
+}
+
+/* 深色主题下的主要编辑区域背景 */
+.theme-dark .cm-content {
+  color: #c8d4a3;
+}
+
+/* 深色主题下的编辑器容器样式 */
+.theme-dark .cm-sizer {
+  background: 
+    /* 夜晚森林纸张质感 */
+    linear-gradient(135deg, 
+      rgba(26, 47, 10, 0.95) 0%, 
+      rgba(42, 63, 26, 0.98) 50%, 
+      rgba(26, 47, 10, 0.95) 100%),
+    /* 夜晚树叶纹理 */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.01) 2px,
+      rgba(255, 255, 255, 0.01) 4px
+    );
+  box-shadow: 
+    /* 夜晚森林阴影效果 */
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* 深色主题下的标题样式 */
+.theme-dark .inline-title {
+  background: 
+    linear-gradient(135deg, 
+      rgba(26, 47, 10, 0.98) 0%, 
+      rgba(42, 63, 26, 0.99) 50%, 
+      rgba(26, 47, 10, 0.98) 100%);
+  color: #d4e6a3;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* 深色主题下的标题下划线装饰 */
+.theme-dark .inline-title::after {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 20%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0.1) 80%, 
+    transparent 100%);
+}
+
+/* 深色主题下的代码块样式 */
+.theme-dark .cm-content .cm-block.cm-code {
+  background: 
+    linear-gradient(135deg, 
+      rgba(26, 47, 10, 0.9) 0%, 
+      rgba(42, 63, 26, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #c8d4a3;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* 深色主题下的引用块样式 */
+.theme-dark .cm-content .cm-block.cm-quote {
+  background: 
+    linear-gradient(135deg, 
+      rgba(42, 63, 26, 0.9) 0%, 
+      rgba(26, 47, 10, 0.95) 100%);
+  border-left: 3px solid #8baa4a;
+  color: #b8c493;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* 深色主题下的链接样式 */
+.theme-dark .cm-content .cm-link {
+  color: #8baa4a;
+  text-decoration-color: #6b8e23;
+}
+
+.theme-dark .cm-content .cm-link:hover {
+  color: #6b8e23;
+  text-decoration-color: #8baa4a;
+  background: rgba(139, 170, 74, 0.1);
+}
+
+/* 深色主题下的强调文本 */
+.theme-dark .cm-content .cm-strong {
+  color: #d4e6a3;
+}
+
+/* 深色主题下的斜体文本 */
+.theme-dark .cm-content .cm-em {
+  color: #b8c493;
+}
+
+/* 深色主题下的列表样式 */
+.theme-dark .cm-content .cm-list {
+  color: #c8d4a3;
+}
+
+.theme-dark .cm-content .cm-list.cm-list-1 {
+  color: #8baa4a;
+}
+
+.theme-dark .cm-content .cm-list.cm-list-2 {
+  color: #6b8e23;
+}
+
+/* 深色主题下的表格样式 */
+.theme-dark .cm-content .cm-table {
+  background: 
+    linear-gradient(135deg, 
+      rgba(26, 47, 10, 0.9) 0%, 
+      rgba(42, 63, 26, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .cm-content .cm-table-header {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.05) 0%, 
+      rgba(255, 255, 255, 0.08) 100%);
+  color: #d4e6a3;
+}
+
+/* 深色主题下的滚动条样式 */
+.theme-dark .cm-scroller::-webkit-scrollbar-track {
+  background: 
+    linear-gradient(135deg, 
+      rgba(42, 63, 26, 0.8) 0%, 
+      rgba(26, 47, 10, 0.9) 100%);
+}
+
+.theme-dark .cm-scroller::-webkit-scrollbar-thumb {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.2) 0%, 
+      rgba(255, 255, 255, 0.3) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .cm-scroller::-webkit-scrollbar-thumb:hover {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.3) 0%, 
+      rgba(255, 255, 255, 0.4) 100%);
+} 
